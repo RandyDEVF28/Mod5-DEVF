@@ -1,0 +1,18 @@
+.options {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.options li {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: aliceblue;
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
