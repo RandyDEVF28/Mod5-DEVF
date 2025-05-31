@@ -22,4 +22,39 @@ let biblioteca = {
       callback(biblioteca);
     }, 1000); // 1 segundo de retraso
   }
+
+  //Funciones para interactuar con el inventario
+  
+  //Agregar Libro
+  function agregarLibro(nuevoLibro, callback) {
+    setTimeout(() => {
+      biblioteca.libros.push(nuevoLibro);
+      console.log(`Libro "${nuevoLibro.titulo}" agregado.`);
+      callback();
+    }, 1000);
+  }
+
+  //Actualizar Disponibilidad
+  function actualizarDisponibilidad(titulo, disponible, callback) {
+    setTimeout(() => {
+      const libro = biblioteca.libros.find(libro => libro.titulo === titulo);
+      if (libro) {
+        libro.disponible = disponible;
+        console.log(`Disponibilidad de "${titulo}" actualizada a ${disponible ? "disponible" : "prestado"}.`);
+      } else {
+        console.log(`Libro "${titulo}" no encontrado.`);
+      }
+      callback();
+    }, 1000);
+  }
+
+  //Consultar Inventario
+  function mostrarInventario() {
+    console.log("\n📚 Inventario Actual:");
+    biblioteca.libros.forEach(libro => {
+      console.log(`${libro.titulo} - ${libro.autor} (${libro.genero}) - ${libro.disponible ? "Disponible" : "Prestado"}`);
+    });
+  }
+  
+  
   
