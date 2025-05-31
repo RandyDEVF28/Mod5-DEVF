@@ -15,3 +15,11 @@ let biblioteca = {
     ]
   };
   
+  //Funcion para simular lectura de datos con callback y retraso 
+  function leerInventario(callback) {
+    setTimeout(() => {
+      console.log("Leyendo inventario...");
+      callback(biblioteca);
+    }, 1000); // 1 segundo de retraso
+  }
+  
