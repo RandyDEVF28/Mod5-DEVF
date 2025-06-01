@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro al Evento</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Registro de Asistencia</h2>
+    <form id="registroForm">
+      <label>Nombre completo:</label>
+      <input type="text" name="nombre" required>
+
+      <label>Correo electrónico:</label>
+      <input type="email" name="email" required>
+
+      <label>Teléfono:</label>
+      <input type="tel" name="telefono" required pattern="[0-9]{10}" title="Ingresa 10 dígitos">
+
+      <label>Intereses:</label>
+      <div class="checkboxes">
+        <label><input type="checkbox" name="intereses" value="Tecnología"> Tecnología</label>
+        <label><input type="checkbox" name="intereses" value="Negocios"> Negocios</label>
+        <label><input type="checkbox" name="intereses" value="Salud"> Salud</label>
+      </div>
+
+      <label>Horario preferido:</label>
+      <label><input type="radio" name="horario" value="Mañana" required> Mañana</label>
+      <label><input type="radio" name="horario" value="Tarde"> Tarde</label>
+
+      <label>Fecha del evento:</label>
+      <input type="date" name="fecha" required>
+
+      <label>Documento de identificación (opcional):</label>
+      <input type="file" name="identificacion">
+
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="resultado"></div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
