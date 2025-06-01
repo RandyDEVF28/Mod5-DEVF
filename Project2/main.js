@@ -56,5 +56,23 @@ let biblioteca = {
     });
   }
   
+  //Ejemplo de Uso 
+  leerInventario((data) => {
+    mostrarInventario();
+  
+    const nuevoLibro = {
+      titulo: "El Principito",
+      autor: "Antoine de Saint-Exupéry",
+      genero: "Ficción",
+      disponible: true
+    };
+  
+    agregarLibro(nuevoLibro, () => {
+      actualizarDisponibilidad("1984", true, () => {
+        mostrarInventario();
+      });
+    });
+  });
+  
   
   
